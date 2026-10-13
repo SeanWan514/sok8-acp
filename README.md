@@ -1,45 +1,96 @@
-# sok8-acp
+# Agentic Commerce Protocols · Research Artifacts
 
-Offline code, data, analytical definitions and English translations of the requested Method policies for the current agentic-commerce taxonomy, plus the two conditional Modeling cases and their figures/data. This is the authorized second publication batch for **`kl41r3/sok8-acp`, public, branch `main`**. The user explicitly chose to keep the repository public and continue uploading Modeling. The first taxonomy/Method commit, originally verified private before the visibility changed, is `cd55fb5aa9360fc5df7c57b6d64f86253e870ad8`; the completed Modeling artifacts are added in a separate later commit, preserving that history. The user-selected repository name does not designate a new protocol or a complete ACP implementation.
+Offline companion for an **eight-function analysis of agentic commerce**: frozen taxonomy selections, English Method policy translations, two conditional economic models, and saved GLM decision evidence.
 
-Start with the [submission review](REVIEW.md), [Method policies](method/README.md), [eight-function analytical codebook](taxonomy/docs/analytical-codebook.md) [data dictionary](taxonomy/docs/data-dictionary.md) and [Modeling artifacts](modeling/README.md). [MANIFEST](MANIFEST.json) binds every released file's size, SHA-256 and applicable CSV schema; [PROVENANCE](PROVENANCE.json) distinguishes the frozen candidate, translated policies and this packaging revision.
+[![Taxonomy: Python 3.9+](https://img.shields.io/badge/Taxonomy-Python%203.9%2B-2563eb)](taxonomy/docs/reproduction.md)
+[![Modeling: Python 3.12+](https://img.shields.io/badge/Modeling-Python%203.12%2B-7c3aed)](modeling/README.md)
+[![Replay: offline](https://img.shields.io/badge/Replay-offline-0f766e)](#-quick-start)
+[![Framework: 8 functions](https://img.shields.io/badge/Framework-8%20functions-d97706)](taxonomy/docs/analytical-codebook.md)
 
-Publication revision 6, batch 2 incorporates the verified 104-file Modeling package from local revision 5, retaining English-only Method policies and every frozen taxonomy byte. The root manifest/seal covers the complete combined package. Historical nonpublication statements inside unchanged source artifacts describe their preparation context; current publication state is stated here.
+**Start here:** [Submission review](REVIEW.md) · [Method guide](method/README.md) · [Analytical codebook](taxonomy/docs/analytical-codebook.md) · [Data dictionary](taxonomy/docs/data-dictionary.md) · [Modeling guide](modeling/README.md)
 
-## Deterministic reproduction scope
+> [!NOTE]
+> Reproduction covers **five frozen taxonomy outputs, specified calculations, and saved decisions**. Live searches, AI screening, independent-work resolution, and corpus-wide function coding are not reproduced. Model results are conditional, not deployed-platform performance.
 
-The package reconstructs the following **five frozen selection, identifier and count outputs byte-for-byte**. This does not establish perfect reproduction of the entire taxonomy study. Inputs already contain upstream identifiers and existing screening decisions; the code applies the 237-entry administrative overlay, groups saved exact typed keys and reconciles counts.
+## 🧭 Repository map
 
-| Output in `taxonomy/expected/` | Reconstructed content |
+| Location | Contents |
 |---|---|
-| `final-selection-records.csv` | Preserved scientific dispositions and final selections/bases for 5,241 source records |
-| `source-counts.csv` | Selection, standard-track and relation-only counts for five sources |
-| `identifier-selection.csv` | Source memberships and selection views for 5,208 exact typed keys |
-| `included-identifiers.csv` | The current 1,301 included typed keys |
-| `counts.json` | Frame, selection and exact-key repetition arithmetic |
+| [`taxonomy/`](taxonomy/README.md) | Frozen records, selection overlay, counts, analytical definitions, and standard-library reproduction code |
+| [`method/`](method/README.md) | Complete English translations of source, workflow, and acceptance policies; context and external dependencies |
+| [`modeling/`](modeling/README.md) | Cases A/B, numerical data, vector figures, editable code, prompts, settings, final responses, and offline checks |
+| [`REVIEW.md`](REVIEW.md) | Submission-readiness review and remaining limitations |
+| [`MANIFEST.json`](MANIFEST.json) · [`SHA256SUMS`](SHA256SUMS) | File sizes, SHA-256 hashes, applicable CSV schemas, and package integrity checks |
+| [`PROVENANCE.json`](PROVENANCE.json) | Frozen-source lineage, translation hashes, packaging history, and publication context |
 
-Python 3.9 or later, standard library only. No network, model, credentials or dependency installation is required. From the repository root:
+The manuscript is separate: no manuscript `.tex`, `.bib`, paper PDF, or `paper/` directory is included. Modeling figure PDFs are included. `sok8-acp` names this repository, not a new protocol or complete ACP implementation.
+
+## 🚀 Quick start
+
+From the repository root, use **Python 3.9+ and the standard library only**. Taxonomy reproduction needs no network, model, credentials, or dependency installation.
 
 ```sh
+# Check frozen inputs and compare all five outputs byte-for-byte.
 (cd taxonomy && python3 -I -S -B code/reproduce.py --check-only)
+
+# Write the same outputs to a new or empty directory.
 (cd taxonomy && python3 -I -S -B code/reproduce.py --output outputs/run)
+
+# Verify the complete package, including Modeling.
 shasum -a 256 -c SHA256SUMS
 ```
 
-The first command generates temporary results and compares all five expected files byte-for-byte. The second saves results in a new or empty directory; generated outputs are excluded from Git. The third checks the complete combined-package seal, including Modeling. The offline workflow also checks frozen input hashes, schemas and structural constraints. See [reproduction instructions](taxonomy/docs/reproduction.md), [query/count table](taxonomy/data/query-counts.csv), [gate scopes](taxonomy/data/gate-matrix.csv) and [method boundaries](taxonomy/docs/method-boundaries.md).
+Generated outputs are excluded from Git. For Modeling, use **Python 3.12+** and the [pinned dependencies](modeling/README.md), then replay:
 
-Query counts, processing receipts and gate scopes are saved upstream observations; the code does not regenerate native search or review evidence. The package does not repeat source collection, full-text retrieval or AI screening, establish the correctness of inclusion judgments, or consolidate independent works/versions. The eight-function codebook provides definitions and comparison questions but **no per-record function labels**. Complete function classifications, frequencies, saturation and agreement cannot be reproduced from this package. Scientific, coverage and work/version acceptance remain Partial or Unknown. The 1,312 included source records yield 1,301 typed keys; typed keys are not independent papers. The 237 user-directed non-inclusions preserve scientific pending status.
+```sh
+python3 -B modeling/replay.py --output outputs/modeling-replay.json
+```
 
-## Modeling reproduction scope
+The Modeling guide also covers data/figure regeneration. Replay makes **zero API calls**, with no provider/model fallback.
 
-[modeling/](modeling/README.md) contains Case A's independent q/d expectations and basic figures, the preserved original decision pilot and clearly separate optimized-cap supplements, plus Case B's exact control calculation, basic policy figure, revised decision pilot and excluded initial campaign evidence. Actual prompts, decoding settings, option order, complete final outputs, exact input data and editable computation/plotting code are retained. Replay makes no API calls or fallback. Credentials, raw service envelopes and unrestricted hidden reasoning remain excluded.
+## 🔬 Taxonomy: reproduced outputs and boundaries
 
-Case A's saved GLM pilot has 23/24 optimal decisions. Case B has 8/14 schema-valid optimal effort choices from 15 revised attempts; one schema error stopped the campaign with nine unattempted cells. The mathematical success probabilities are exact policy expectations, not real platform effects or multi-round GLM task success. Install the pinned numerical/plot dependencies and follow the separate Modeling README for offline replay and a clean regenerated output copy. This scope does not broaden the taxonomy's five-output reproduction claim.
+Using saved identifiers and screening decisions, the code applies the **237-record administrative overlay**, groups exact typed keys, reconciles counts, and checks hashes, schemas, and structural constraints.
 
-## Contents, translation and rights
+| Output in `taxonomy/expected/` | Reconstructed content |
+|---|---|
+| `final-selection-records.csv` | Scientific dispositions and final selection/bases for **5,241 source records** |
+| `source-counts.csv` | Selection, standard-track, and relation-only counts for five sources |
+| `identifier-selection.csv` | Source memberships and selection views for **5,208 exact typed keys** |
+| `included-identifiers.csv` | **1,301 included typed keys**, derived from 1,312 included source records |
+| `counts.json` | Frame, selection, and exact-key repetition arithmetic |
 
-`taxonomy/` preserves all 23 frozen-candidate files and its internal seal byte-for-byte. The original documents' term "public candidate" identifies that frozen source artifact; the current public destination is authorized separately. Statements about nonpublication and licensing retain their frozen context. Manuscript locators in claim mapping identify upstream discussion only; this repository contains no manuscript `.tex`, `.bib`, paper PDF or `paper/` directory. Modeling figure PDFs are included as model assets.
+**Typed keys are not independent papers.** The 237 user-directed non-inclusions retain their scientific pending status. Scientific, coverage, and work/version acceptance remain **Partial or Unknown**.
 
-`method/` contains complete English translations of the three requested policy documents and a short context/dependency guide. The authoritative source documents remain unchanged outside the repository. Their original and translated SHA-256 values are recorded in PROVENANCE. The translated policies preserve brief user-decision quotations and opaque message identifiers under the user's explicit document-inclusion request; they differ from the redacted `taxonomy/` projections. Historical NotRun statements refer to policy-approval time, not current execution status. Some original relative references remain external dependencies, as listed in the Method guide.
+Query counts, receipts, and gate scopes are frozen observations. Replay neither repeats collection, full-text retrieval, or screening nor validates inclusion judgments or resolves works/versions. The codebook supplies definitions and comparison questions, **not per-record labels, classification frequencies, saturation, or agreement measures**.
 
-The user explicitly authorized public GitHub publication. Ownership/license coverage for new code, documents and derived data remains unresolved; no MIT or CC license has been assigned. The upstream MIT notice is license evidence only. Primary full text, abstracts, screenshots, unrestricted internal conversations, raw service envelopes, credentials, original research Git and archives are excluded. Original material and prior package versions remain locally preserved.
+Details: [Reproduction instructions](taxonomy/docs/reproduction.md) · [Query/count table](taxonomy/data/query-counts.csv) · [Gate scopes](taxonomy/data/gate-matrix.csv) · [Method boundaries](taxonomy/docs/method-boundaries.md)
+
+## 📊 Modeling: calculations and saved decisions
+
+| Case | Mathematical scope | Saved GLM pilot |
+|---|---|---|
+| [A: Timely review](modeling/case-a/README.md) | Independent review probability `q` and autonomy cap `d`; **501 × 601 parameter pairs**. Original and optimized-cap supplements remain separate. | **23/24** decisions maximize the stipulated utility. |
+| [B: Selective validation](modeling/case-b/README.md) | Exact seller-control calculation under fixed revenues and four observation policies. | **8/14** schema-valid effort choices are optimal across **15 revised attempts**; one schema error stopped the campaign, leaving **nine cells unattempted**. The initial campaign remains excluded. |
+
+Both cases retain figures/data, prompts, decoding settings, option order, complete final outputs, and editable computation/plotting code. Success probabilities are exact model expectations, not platform effects or multi-round GLM success rates. This does not broaden the taxonomy's five-output claim.
+
+## 📚 Method translations and source continuity
+
+`method/` provides three complete English policy translations and a context/dependency guide. Originals remain unchanged outside the repository; [PROVENANCE](PROVENANCE.json) records both sets of hashes. Unlike redacted taxonomy projections, the translations retain explicitly requested brief decision quotations and opaque message identifiers.
+
+Historical **NotRun** statements describe policy-approval time. Some original references point to unshipped dependencies listed in the [Method guide](method/README.md); the translations do not reproduce search execution.
+
+## 🗂️ Publication history
+
+Publication to **`kl41r3/sok8-acp`, public branch `main`**, was explicitly authorized. The first taxonomy/Method commit, [`cd55fb5`](https://github.com/kl41r3/sok8-acp/commit/cd55fb5aa9360fc5df7c57b6d64f86253e870ad8), was verified private before visibility changed; Modeling followed separately.
+
+Revision **6, batch 2** incorporated the verified 104-file package from local revision 5. All **23 frozen taxonomy files and their internal seal** remain byte-identical. Root integrity records cover the combined package and are refreshed with this README.
+
+Frozen “public candidate” and nonpublication statements describe preparation context; publication status is stated here. Claim-map manuscript locators refer to the separate paper. Originals and prior packages remain locally preserved.
+
+## ⚖️ Rights and release scope
+
+Public availability does not establish a redistribution license. Ownership/license coverage for new code, documents, and derived data remains unresolved; **no MIT or CC license has been assigned**. The upstream MIT notice is retained as license evidence only.
+
+The release excludes primary full text, abstracts, screenshots, unrestricted internal conversations or hidden reasoning, raw service envelopes, credentials, original research Git, and archives. It includes the scoped research artifacts and saved final-answer evidence described above.
