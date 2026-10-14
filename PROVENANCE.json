@@ -1,12 +1,12 @@
 {
-  "scope": "English-only taxonomy, complete Method policy translations and conditional Modeling artifacts; authorized second public publication batch",
+  "scope": "Current-paper reproducibility artifacts plus preserved historical analyses; manuscript source and full PDF excluded",
   "target": {
     "owner": "kl41r3",
     "repository": "sok8-acp",
     "visibility": "public",
     "branch": "main"
   },
-  "package_revision": 6,
+  "package_revision": 7,
   "user_scope_change": {
     "exclude_manuscript": true,
     "directory_name": "taxonomy",
@@ -120,26 +120,24 @@
   ],
   "concurrent_extension": {
     "path": "modeling/",
-    "separately_authorized": true,
-    "included_in_this_base_manifest": false,
-    "final_full_tree_reseal_required": true
+    "included_in_this_base_manifest": true
   },
   "modeling": {
     "directory": "modeling",
-    "primary_case_a_analysis": "Independent q and d, 501 by 601 pairs, no cap optimization",
+    "primary_case_a_analysis": "Current threshold model in case-a/thresholds; prior independent q,d grid retained as historical",
     "case_b_model": "Eight-round seller control with fixed upfront state revenue, not a market equilibrium",
     "api_calls_during_packaging": 0,
     "evidence_projection": "Exact prompts/settings/option ordering/complete final outputs; exclude credentials, local paths, service envelope/IDs and hidden reasoning",
     "source_provenance": "modeling/source-provenance.json",
-    "claim_map": "modeling/claim-map.csv",
-    "verification": "modeling/verification.json",
+    "claim_map": "claim-to-artifact.csv",
+    "verification": "reproduce.py and REVIEW.md",
     "figure_pdfs_included": true,
     "no_manuscript_source_in_repository": true,
     "no_new_license_assigned": true,
     "scientific_boundary": "Conditional numerical examples and small one-step model-specific pilot; not general scientific readiness or deployed-protocol effectiveness"
   },
-  "publication_batch": 2,
-  "parent_commit": "cd55fb5aa9360fc5df7c57b6d64f86253e870ad8",
+  "publication_batch": 3,
+  "parent_commit": "551177e6417b774fffa4d496afa3976aeabc3534",
   "publication_authorized": true,
   "modeling_publication_source": {
     "local_package_revision": 5,
@@ -154,5 +152,15 @@
     "current_public_visibility_explicitly_authorized": true,
     "ownership_and_public_redistribution_license_coverage": "Unknown; no MIT/CC grant inferred"
   },
-  "publication_does_not_resolve_redistribution_license": true
+  "publication_does_not_resolve_redistribution_license": true,
+  "current_paper": {
+    "sources": 66,
+    "mapped_corpus_sources": 40,
+    "supplementary_scholarship": 5,
+    "official_documents": 21,
+    "claims": 6,
+    "tables": 5,
+    "framework_source": "figures/Taxonomy_Editable.drawio",
+    "manuscript_included": false
+  }
 }

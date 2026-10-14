@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Case B: exact finite-horizon control calculation and bounded GLM probes."""
+import argparse
 import csv
 import hashlib
 import itertools
@@ -39,6 +40,7 @@ def dump(path, value):
 
 
 def next_states(policy, state, success, report):
+    # The seller does not observe the independent draw before effort/reporting.
     rho = DESIGN["policies"][policy]["rho"]
     if policy.startswith("OBLIGATED"):
         audited = "G" if success and report == "REPORT" else "B"
@@ -145,5 +147,35 @@ def calculate():
         theory["policies"][policy]={"values":values,"decisions":decisions,"forward":{s:forward(policy,s,decisions) for s in ("G","B")}}
     return theory
 
-if __name__=="__main__":
-    print(json.dumps(calculate(),indent=2))
+def export(output):
+    """Write freshly solved values and all 64 control cells for downstream plots."""
+    output.mkdir(parents=True, exist_ok=True)
+    theory = calculate()
+    dump(output / "theory.json", theory)
+    rows = []
+    for policy, result in theory["policies"].items():
+        for remaining in range(1, DESIGN["horizon"] + 1):
+            for state in ("G", "B"):
+                d = result["decisions"][remaining][state]
+                rows.append({"policy": policy, "remaining": remaining, "state": state,
+                    "value": result["values"][remaining][state], "effort": d["effort"],
+                    "optimal_efforts": "|".join(d["optimal_efforts"]),
+                    "success_report": d["report"]["success"], "failure_report": d["report"]["failure"],
+                    "utility_H": d["utility"]["H"], "utility_L": d["utility"]["L"],
+                    "continuation_G": d["continuation_values"]["G"], "continuation_B": d["continuation_values"]["B"]})
+    with (output / "cells.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    return theory
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    if args.output:
+        export(args.output)
+        print("Regenerated Case B theory and 64 control cells.")
+    else:
+        print(json.dumps(calculate(), indent=2))

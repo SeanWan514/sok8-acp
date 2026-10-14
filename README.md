@@ -1,45 +1,52 @@
-# sok8-acp
+# Agentic commerce: data and reproducible analyses
 
-Offline code, data, analytical definitions and English translations of the requested Method policies for the current agentic-commerce taxonomy, plus the two conditional Modeling cases and their figures/data. This is the authorized second publication batch for **`kl41r3/sok8-acp`, public, branch `main`**. The user explicitly chose to keep the repository public and continue uploading Modeling. The first taxonomy/Method commit, originally verified private before the visibility changed, is `cd55fb5aa9360fc5df7c57b6d64f86253e870ad8`; the completed Modeling artifacts are added in a separate later commit, preserving that history. The user-selected repository name does not designate a new protocol or a complete ACP implementation.
+This repository accompanies *Agentic Commerce Protocols: A Systematic Mapping and Evaluation*. It contains the frozen selection data, the source-to-claim synthesis ledger, and executable analyses for the paper's two conditional models.
 
-Start with the [submission review](REVIEW.md), [Method policies](method/README.md), [eight-function analytical codebook](taxonomy/docs/analytical-codebook.md) [data dictionary](taxonomy/docs/data-dictionary.md) and [Modeling artifacts](modeling/README.md). [MANIFEST](MANIFEST.json) binds every released file's size, SHA-256 and applicable CSV schema; [PROVENANCE](PROVENANCE.json) distinguishes the frozen candidate, translated policies and this packaging revision.
+## Reproduce
 
-Publication revision 6, batch 2 incorporates the verified 104-file Modeling package from local revision 5, retaining English-only Method policies and every frozen taxonomy byte. The root manifest/seal covers the complete combined package. Historical nonpublication statements inside unchanged source artifacts describe their preparation context; current publication state is stated here.
-
-## Deterministic reproduction scope
-
-The package reconstructs the following **five frozen selection, identifier and count outputs byte-for-byte**. This does not establish perfect reproduction of the entire taxonomy study. Inputs already contain upstream identifiers and existing screening decisions; the code applies the 237-entry administrative overlay, groups saved exact typed keys and reconciles counts.
-
-| Output in `taxonomy/expected/` | Reconstructed content |
-|---|---|
-| `final-selection-records.csv` | Preserved scientific dispositions and final selections/bases for 5,241 source records |
-| `source-counts.csv` | Selection, standard-track and relation-only counts for five sources |
-| `identifier-selection.csv` | Source memberships and selection views for 5,208 exact typed keys |
-| `included-identifiers.csv` | The current 1,301 included typed keys |
-| `counts.json` | Frame, selection and exact-key repetition arithmetic |
-
-Python 3.9 or later, standard library only. No network, model, credentials or dependency installation is required. From the repository root:
+Use Python 3.12 in a new virtual environment:
 
 ```sh
-(cd taxonomy && python3 -I -S -B code/reproduce.py --check-only)
-(cd taxonomy && python3 -I -S -B code/reproduce.py --output outputs/run)
-shasum -a 256 -c SHA256SUMS
+python3.12 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+python -B reproduce.py --output outputs/reproduction
 ```
 
-The first command generates temporary results and compares all five expected files byte-for-byte. The second saves results in a new or empty directory; generated outputs are excluded from Git. The third checks the complete combined-package seal, including Modeling. The offline workflow also checks frozen input hashes, schemas and structural constraints. See [reproduction instructions](taxonomy/docs/reproduction.md), [query/count table](taxonomy/data/query-counts.csv), [gate scopes](taxonomy/data/gate-matrix.csv) and [method boundaries](taxonomy/docs/method-boundaries.md).
+The command verifies release checksums, reproduces five taxonomy outputs byte for byte, exports Tables 1–5, checks all 66 synthesis source links, proves five Case A symbolic identities, checks 100,000 direct-payoff cases, regenerates the 40,401-row threshold surface, and independently verifies Case B's 64 decision cells and eight forward expectations with rational arithmetic. It regenerates both model figures as PDF, SVG and PNG. A successful run writes `outputs/reproduction/verification.json` with `passed: true`. Choose a new output directory for each run. The calculation uses no credentials or external model API; network access is needed only to install dependencies. Allow a few minutes and approximately 500 MB of free space including the environment.
 
-Query counts, processing receipts and gate scopes are saved upstream observations; the code does not regenerate native search or review evidence. The package does not repeat source collection, full-text retrieval or AI screening, establish the correctness of inclusion judgments, or consolidate independent works/versions. The eight-function codebook provides definitions and comparison questions but **no per-record function labels**. Complete function classifications, frequencies, saturation and agreement cannot be reproduced from this package. Scientific, coverage and work/version acceptance remain Partial or Unknown. The 1,312 included source records yield 1,301 typed keys; typed keys are not independent papers. The 237 user-directed non-inclusions preserve scientific pending status.
+## Contents
 
-## Modeling reproduction scope
+| Path | Purpose |
+|---|---|
+| `taxonomy/` | Frozen inputs, selection overlay, five expected outputs and standard-library reproduction code |
+| `synthesis/` | 40 mapped-corpus sources, five supplementary scholarly sources, 21 official documents, six claim contrasts and Tables 2–5 inputs |
+| `modeling/case-a/thresholds/` | Current Case A threshold model, symbolic and direct-payoff checks, surface data and Figure 2 |
+| `modeling/case-b/` | Current Case B finite-horizon solver, 64 cells and Figure 3 |
+| `figures/` | Editable Figure 1 framework and its published PDF |
+| `method/` | Preserved English translations of the source and screening policies |
+| `claim-to-artifact.csv` | Paper labels mapped to inputs, generation code, outputs and checks |
 
-[modeling/](modeling/README.md) contains Case A's independent q/d expectations and basic figures, the preserved original decision pilot and clearly separate optimized-cap supplements, plus Case B's exact control calculation, basic policy figure, revised decision pilot and excluded initial campaign evidence. Actual prompts, decoding settings, option order, complete final outputs, exact input data and editable computation/plotting code are retained. Replay makes no API calls or fallback. Credentials, raw service envelopes and unrestricted hidden reasoning remain excluded.
+The taxonomy calculation reproduces 5,217 selection-track records, 1,312 included source records, 237 author-directed non-inclusions preserving their earlier pending decisions, and 1,301 included typed identifiers. Source records and identifiers are different counting units. Native searches and scientific screening judgments are supplied as frozen inputs. The public projections omit licensed source bodies and internal review conversations.
 
-Case A's saved GLM pilot has 23/24 optimal decisions. Case B has 8/14 schema-valid optimal effort choices from 15 revised attempts; one schema error stopped the campaign with nine unattempted cells. The mathematical success probabilities are exact policy expectations, not real platform effects or multi-round GLM task success. Install the pinned numerical/plot dependencies and follow the separate Modeling README for offline replay and a clean regenerated output copy. This scope does not broaden the taxonomy's five-output reproduction claim.
+The synthesis ledger supports the six stated comparisons. It records each source's role and actual reading scope. These are purposively selected mechanism contrasts, with 40 sources linked to included corpus identifiers. The five supplementary scholarly sources remain outside that inclusion count. Protocol versions are identified by dated specification URLs or recorded snapshot notes.
 
-## Contents, translation and rights
+Case A describes incentive thresholds under the paper's payoff assumptions; the plotted zero-fee surface is a special case of the symbolic equations. Case B describes eight-round seller control with fixed state-dependent revenue and unobserved monitoring draws until after effort/reporting. Neither model is fitted to field outcomes.
 
-`taxonomy/` preserves all 23 frozen-candidate files and its internal seal byte-for-byte. The original documents' term "public candidate" identifies that frozen source artifact; the current public destination is authorized separately. Statements about nonpublication and licensing retain their frozen context. Manuscript locators in claim mapping identify upstream discussion only; this repository contains no manuscript `.tex`, `.bib`, paper PDF or `paper/` directory. Modeling figure PDFs are included as model assets.
+## Framework figure
 
-`method/` contains complete English translations of the three requested policy documents and a short context/dependency guide. The authoritative source documents remain unchanged outside the repository. Their original and translated SHA-256 values are recorded in PROVENANCE. The translated policies preserve brief user-decision quotations and opaque message identifiers under the user's explicit document-inclusion request; they differ from the redacted `taxonomy/` projections. Historical NotRun statements refer to policy-approval time, not current execution status. Some original relative references remain external dependencies, as listed in the Method guide.
+`figures/Taxonomy_Editable.drawio` is the editable source of Figure 1. Install draw.io desktop separately, then export it with:
 
-The user explicitly authorized public GitHub publication. Ownership/license coverage for new code, documents and derived data remains unresolved; no MIT or CC license has been assigned. The upstream MIT notice is license evidence only. Primary full text, abstracts, screenshots, unrestricted internal conversations, raw service envelopes, credentials, original research Git and archives are excluded. Original material and prior package versions remain locally preserved.
+```sh
+drawio --export --format pdf --crop --output framework.pdf figures/Taxonomy_Editable.drawio
+```
+
+On macOS the executable is `/Applications/draw.io.app/Contents/MacOS/draw.io`. Pass it to `reproduce.py --drawio <executable>` to include export in a run. PDF export was tested with draw.io 31.4.5. The original PDF uses EB Garamond; absent that font, draw.io substitutes another font, so export layout/font bytes can differ. The original PDF is included and checksum-verified.
+
+## Historical analyses
+
+The earlier independent-cap Case A grid, optimized-cap supplements, and saved GLM probes remain under `modeling/`. They are historical exploratory artifacts; the current paper uses `case-a/thresholds/` and the exact Case B control calculation. To additionally regenerate and replay the historical evidence locally, add `--legacy`. No live API call is made. See `modeling/README.md`.
+
+## Integrity and reuse
+
+`MANIFEST.json` records file sizes, hashes and CSV schemas/counts. `SHA256SUMS` also seals the manifest. See `REVIEW.md` for validation scope and `PROVENANCE.json` for provenance. Manuscript LaTeX and the full manuscript PDF are maintained separately. This release grants no new blanket software or data license; retained third-party notices remain applicable. Metadata/source identifiers link to the original publishers and protocol authors.

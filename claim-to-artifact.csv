@@ -1,0 +1,9 @@
+artifact,manuscript_label,inputs,code_or_export,outputs,check
+Table 1,tab:source-results,taxonomy/data/,taxonomy/code/reproduce.py;reproduce.py,outputs/reproduction/synthesis/table-1-source-selection.csv,Five byte-identical taxonomy outputs and exact table totals
+Table 2,tab:stage-layer-mapping,synthesis/tables.json,reproduce.py,outputs/reproduction/synthesis/table-2-stage-functions.csv,Eight functions and stage memberships
+Table 3,tab:method-queries,synthesis/tables.json,reproduce.py,outputs/reproduction/synthesis/table-3-queries.csv,27 expressions and paired query IDs
+Table 4,tab:method-eligibility,synthesis/tables.json,reproduce.py,outputs/reproduction/synthesis/table-4-eligibility.csv,Six retained eligibility criteria
+Table 5,tab:synthesis-trace,synthesis/sources.json;synthesis/claims.json,reproduce.py,outputs/reproduction/synthesis/table-5-synthesis.csv,Six claims; 66 locators; 40 corpus joins
+Figure 1,fig:combined-taxonomy-workflows,figures/Taxonomy_Editable.drawio,drawio --export --format pdf --crop,figures/Taxonomy_Revised.pdf,Editable source and tested export; font-dependent PDF bytes
+Figure 2 and Case A thresholds,fig:model-a-thresholds,modeling/case-a/thresholds/analyze.py;modeling/case-a/thresholds/theme.yaml,modeling/case-a/thresholds/analyze.py,modeling/case-a/thresholds/case-a-threshold-regions.pdf;modeling/case-a/thresholds/threshold-surface.csv,Five symbolic identities; 100000 direct-payoff checks; 40401 surface rows
+Figure 3 and Case B control,fig:model-b-controls,modeling/case-b/compute.py:DESIGN,modeling/case-b/compute.py;modeling/case-b/plot.py;reproduce.py:exact_case_b,modeling/case-b/data/theory.json;modeling/case-b/figures/plotted-values.csv;modeling/case-b/figures/case-b-policy-comparison.pdf,64 exact-rational decision cells; eight exact-rational forward paths

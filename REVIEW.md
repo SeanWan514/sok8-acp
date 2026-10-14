@@ -1,30 +1,22 @@
-# Submission review
+# Release verification
 
-Target: `kl41r3/sok8-acp`, visibility **public**, branch `main`. This authorized second commit adds the completed Modeling package after the first taxonomy/Method commit `cd55fb5aa9360fc5df7c57b6d64f86253e870ad8`. The existing public repository and main baseline were read back before this batch; publication preserves the first commit and uses a normal fast-forward push. No manuscript or Overleaf content is added.
+This release was checked in an isolated Python 3.12.14 virtual environment using `requirements.txt`. The root command regenerated all current-paper computational results without an API call. The GitHub workflow repeats that command, including the historical replay, on Ubuntu with Python 3.12.
 
-Publication revision 6, batch 2 incorporates the verified local revision-5 package and the authorized Modeling cases, including English descriptions, actual saved decision evidence, portable offline computation/plotting code, complete numerical data and figures. It retains revision 4's complete English Method translations and all 23 frozen taxonomy files byte-for-byte. The editable manuscript/compiled paper are delivered separately as an Overleaf upload package; no manuscript source is added here. Exact pre-revision packages and packaging receipts remain locally preserved outside the submission tree.
-
-## Released contents
-
-| Path | Contents and origin |
+| Check | Result |
 |---|---|
-| `taxonomy/` | All 23 frozen-candidate files, unchanged: offline code, identifier/decision/overlay/query/gate projections, five expected outputs, schema, analytical codebook, method/rights documents and internal seal |
-| `method/` | Complete English translations of source, workflow-template and acceptance policies, plus a short context/external-dependency guide; no dependency closure added |
-| `modeling/` | Both conditional cases, independent Case A surfaces/slices, exact Case B control/figure, prompts/settings/final-answer projections/scoring, preserved excluded/stopped evidence, offline replay and separately marked supplements |
-| Six root files | README, REVIEW, PROVENANCE, MANIFEST, SHA256SUMS and `.gitignore` describing the target, scope, provenance and integrity |
+| Frozen taxonomy | All 23 package files retain their previous bytes; five regenerated outputs match their expected files byte for byte |
+| Selection totals | 5,217 selection records; 1,312 included records; 237 author non-inclusions; 1,301 included typed identifiers |
+| Synthesis | 66 unique source keys with retrievable locators; all 40 mapped-source identifiers join to the included set; six contrasts have valid decisive references |
+| Tables | Tables 1–5 exported from the shipped data; 27 distinct search expressions |
+| Current Case A | Five symbolic identities and 100,000 direct-payoff checks pass; 40,401 surface rows reproduce byte for byte |
+| Current Case B | 64 cells agree with independent exact-rational enumeration; eight forward paths agree in effort, success and final-state probabilities |
+| Model figures | Both PDFs, SVGs and PNGs regenerated from freshly computed data; Case B plotted-values CSV agrees byte for byte |
+| Historical analyses | 301,101-cell grid, saved response re-scoring and historical plot generation pass without live requests |
+| Framework | Editable draw.io source present; PDF export tested with draw.io 31.4.5; font substitution changes rendering when EB Garamond is unavailable |
+| Package | Files sealed by SHA-256; CSV schemas/counts included in manifest; no manuscript `.tex` or full manuscript PDF included |
 
-[MANIFEST.json](MANIFEST.json) is the exact inclusion list for the complete 104-file package: six root files, four Method files, 23 taxonomy files and 71 Modeling files. The producer's verified frozen ZIP supplies this batch; only root publication status and seals are updated in the dedicated publication checkout. SHA256SUMS additionally binds the manifest without recursive self-reference. Excluded: manuscript `.tex`/`.bib`/PDF files, other layers and unrelated model results, full collection/AI-screening source and environments, original literature/records, licensed abstracts/full text/screenshots, private/frozen evidence, unrestricted internal conversations, service logs/envelopes/credentials, research Git/history, archives and duplicate source ZIPs. Exclusion limits submission contents; original materials are retained.
+The arithmetic checks validate the supplied frozen selection decisions. Scientific corpus screening, native retrieval, independent-work/version identification, and field-wide function frequencies are outside this calculation. Source reading scope is recorded in `synthesis/sources.json`. The model results are conditional on their stated assumptions.
 
-## Verification and limits
+The release adds original analysis code and bibliographic/analytical metadata. Existing saved probe evidence and method policies retain their original provenance. The package was inspected for credentials, private absolute paths, service envelopes and manuscript content. No new blanket license is assigned. This is the author's public artifact repository; it is not an anonymous review mirror.
 
-Modeling replay recomputes all 301,101 independent Case A pairs, directly checks 42 original-payoff integrals, re-scores 24 GLM final answers, recomputes every one of Case B's 64 control cells and re-scores the 14 valid revised answers while preserving one schema failure and nine unattempted cells. The initial Case B campaign has five responses and one interrupted request, all excluded. Case B forward success/effort bars are deterministic expectations; neither case is a multi-round LLM transaction test. [Modeling README](modeling/README.md) and [claim mapping](modeling/claim-map.csv) state the exact evidence boundary. A clean staged copy regenerates the main plots without credentials or network; the root release receipt records this check and its versions.
-
-Every package filename and UTF-8 file body, including CSV/JSON values and code comments, was scanned for Han/CJK characters and Chinese punctuation. The three policy translations were compared against the originals paragraph-by-paragraph, including tables, numbers, identifiers, gates, stages, clauses, links, uncertainty boundaries and the user decision. Original and translated hashes are recorded separately; no claim of byte-identical translation is made.
-
-The 23 taxonomy files and their internal seal remain unchanged. Isolated Python check-only again matched five expected outputs; the saved-output and source-comparison evidence from revision 2 remains applicable because code, inputs and expected outputs did not change. This revision also checks repository seals, the exact file set, valid relative links outside the original-policy dependency references, common credential/token/signed-URL patterns, symlinks and absence of manuscript `.tex`/`.bib` and paper PDFs. Modeling figure PDFs are allowed and their extracted text/metadata are checked.
-
-The English policies retain the explicitly requested brief user-decision quotation and opaque message identifiers. The package is not claimed to be wholly redacted or anonymous. [method/README](method/README.md) distinguishes the six valid cross-document links from twelve unshipped-reference occurrences to seven dependencies; those historical references remain external and are not presented as package-resolvable links. Detailed local receipts are linked by the project's publication owner and are excluded from submission.
-
-The supported taxonomy result remains the [five deterministic outputs](README.md#deterministic-reproduction-scope), based on frozen identifiers and existing screening decisions. It is not repeated collection, screening or function classification. Per-record eight-function labels, complete classification frequencies and agreement are unavailable; scientific, coverage and work/version dependencies remain Partial or Unknown. Public publication does not establish unresolved ownership or redistribution-license coverage.
-
-The user authorized uploading Modeling separately once complete and subsequently explicitly chose to keep the repository public and continue. The first commit was verified private at its original publication; that historical context is preserved without rewriting it. The producer's completed frozen ZIP passed source bindings, full clean-copy numerical reproduction and figure regeneration. This publication reuses those unchanged-input checks and additionally verifies the exact remote tree, visibility, commit ancestry, root checksums and bounded offline replay in a clean clone. It makes no API calls. Detailed publication receipts remain outside the repository.
+`verification.json` is produced by each execution so that readers can inspect their own environment and checks. GitHub Actions shows the status of the exact pushed revision.

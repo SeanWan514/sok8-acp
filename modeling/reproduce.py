@@ -10,7 +10,7 @@ def main():
     assert ROOT not in output.parents,'Output must be outside modeling/ to avoid recursive copying.'
     shutil.copytree(ROOT,output,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
     env=dict(os.environ);env['PYTHONDONTWRITEBYTECODE']='1';env['MPLCONFIGDIR']=str(output/'.mpl-cache')
-    commands=[['case-a/compute.py'],['case-b/compute.py'],['replay.py','--output','replay-receipt.json']]
+    commands=[['case-a/compute.py'],['case-b/compute.py','--output','case-b/data'],['replay.py','--output','replay-receipt.json']]
     if args.plots:commands.extend([['case-a/plot.py'],['case-b/plot.py'],['case-a/supplemental/optimized-cap/plot.py']])
     for cmd in commands:
         result=subprocess.run([sys.executable,'-B',*cmd],cwd=output,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
